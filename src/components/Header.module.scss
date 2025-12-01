@@ -1,0 +1,49 @@
+.header {
+  margin-bottom: 1rem;
+}
+
+.headerForm {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.headerInput {
+  flex: 1;
+  padding: 0.4rem 0;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  background: transparent;
+  font: inherit;
+  outline: none;
+}
+
+.headerInput::placeholder {
+  color: #9ca3af;
+}
+
+.btnAdd {
+  padding: 0.6rem 1.6rem;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btnAdd:hover {
+  background: #1d4ed8;
+}
+
+.errorMessage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: red;
+  padding: 10px;
+  border-radius: 4px;
+}

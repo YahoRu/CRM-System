@@ -1,0 +1,130 @@
+.tasksSection {
+  width: 100%;
+}
+
+.taskFilters {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 24px;
+  padding: 0.1rem;
+  margin: 0 0 1rem;
+  width: 100%;
+}
+
+.taskFilters button {
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  font: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.taskFilters button.active {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.taskFilters button:focus {
+  outline: none;
+}
+
+.tableList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.table {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 4px gray;
+  min-height: 56px;
+  box-sizing: border-box;
+}
+
+.table input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+}
+
+.tableTitle {
+  flex: 1;
+  min-width: 0;
+  width: 150px;
+  line-height: 2;
+  padding: 0 4px;
+  margin: 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tableTitle.lineThrough {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 96px;
+  flex-shrink: 0;
+}
+
+.tableEditForm {
+  flex: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 40px;
+  height: 32px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btnSave,
+.btnEdit {
+  background: #2563eb;
+}
+
+.btnCancel,
+.btnDelete {
+  background: #ef4444;
+}
+
+.btnIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.errorMessage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: red;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
