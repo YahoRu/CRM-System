@@ -1,5 +1,6 @@
 .tasksSection {
   width: 100%;
+  min-width: 350px;
 }
 
 .taskFilters {
@@ -46,7 +47,9 @@
   margin-bottom: 0.75rem;
   box-shadow: 0 2px 4px gray;
   min-height: 56px;
+  max-width: 350px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .table input[type='checkbox'] {
@@ -123,8 +126,23 @@
   border-radius: 4px;
 }
 
+.inputTooltip {
+  position: absolute;
+  top: 70%;
+  left: 17%;
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+  color: red;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+  z-index: 10;
+}
+
 .loading {
   text-align: center;
-  padding: 20px;
   color: #666;
 }

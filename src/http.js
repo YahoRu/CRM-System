@@ -1,5 +1,5 @@
-export async function fetchTasks() {
-  const response = await fetch('https://easydev.club/api/v1/todos')
+export async function fetchTasks(filter = 'all') {
+  const response = await fetch(`https://easydev.club/api/v1/todos?filter=${filter}`)
 
   if (!response.ok) {
     throw new Error('Failed to fetch list of Tasks.')

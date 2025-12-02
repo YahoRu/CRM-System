@@ -8,7 +8,6 @@ import saveIcon from '../assets/icon-save.png'
 
 export default function TaskList({
   allTasks,
-  displayedTasks,
   typeOfTasks,
   setTypeOfTasks,
   isLoading,
@@ -21,6 +20,7 @@ export default function TaskList({
 }) {
   const [editedTaskId, setEditedTaskId] = useState(null)
   const [editedTaskText, setEditedTaskText] = useState('')
+  const [inputValidationFailed, setInputValidationFailed] = useState('')
 
   function startEditingTask(task) {
     setEditedTaskId(task.id)
@@ -32,15 +32,27 @@ export default function TaskList({
     setEditedTaskText('')
   }
 
-  async function saveEditedTask(taskId) {
-    if (editedTaskText.length < 2 || editedTaskText.length > 64) return
-
-    await updateTaskTitle(taskId, editedTaskText)
-    cancelEditingTask()
+  function handleOnChangeInput(value) {
+    setEditedTaskText(value)
+    setInputValidationFailed('')
   }
 
   function handleMenuButton(event) {
     setTypeOfTasks(event.currentTarget.id)
+  }
+
+  async function saveEditedTask(taskId) {
+    const title = editedTaskText.trim()
+
+    if (title.length < 2 || title.length > 64) {
+      setInputValidationFailed(
+        'Введите от 2 до 64 символов без учета пробелов в начале и конце строки',
+      )
+      return
+    }
+
+    await updateTaskTitle(taskId, title)
+    cancelEditingTask()
   }
 
   return (
@@ -81,7 +93,7 @@ export default function TaskList({
 
         {!isLoading &&
           !error &&
-          displayedTasks.map((toDo) => (
+          allTasks.data.map((toDo) => (
             <li className={styles.table} key={toDo.id}>
               <input
                 id={`${toDo.id}-${toDo.isDone}`}
@@ -89,7 +101,6 @@ export default function TaskList({
                 checked={toDo.isDone}
                 onChange={() => isDoneSwitcher(toDo.id)}
               />
-
               {editedTaskId === toDo.id ? (
                 <form
                   className={styles.tableEditForm}
@@ -106,9 +117,18 @@ export default function TaskList({
                     minLength={2}
                     maxLength={64}
                     required
-                    onChange={(event) => setEditedTaskText(event.target.value)}
+                    onChange={(event) =>
+                      handleOnChangeInput(event.target.value)
+                    }
                   />
-
+                  {inputValidationFailed && (
+                    <p
+                      className={styles.inputTooltip}
+                      onClick={() => setInputValidationFailed('')}
+                    >
+                      {inputValidationFailed}
+                    </p>
+                  )}
                   <div className={styles.tableActions}>
                     <button
                       type="submit"

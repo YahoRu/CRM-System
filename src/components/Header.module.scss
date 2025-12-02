@@ -7,6 +7,12 @@
   gap: 16px;
   align-items: center;
   margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.inputWrapper {
+  position: relative;
+  flex: 1;
 }
 
 .headerInput {
@@ -21,6 +27,20 @@
 
 .headerInput::placeholder {
   color: #9ca3af;
+}
+
+.inputTooltip {
+  position: absolute;
+  top: 115%;
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+  color: red;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .btnAdd {
