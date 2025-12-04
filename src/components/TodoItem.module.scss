@@ -1,0 +1,94 @@
+.table {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 4px gray;
+  min-height: 56px;
+  max-width: 350px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.table input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+}
+
+.tableTitle {
+  flex: 1;
+  min-width: 0;
+  width: 150px;
+  line-height: 2;
+  padding: 0 4px;
+  margin: 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tableTitle.lineThrough {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 96px;
+  flex-shrink: 0;
+}
+
+.tableEditForm {
+  flex: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 40px;
+  height: 32px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btnSave,
+.btnEdit {
+  background: #2563eb;
+}
+
+.btnCancel,
+.btnDelete {
+  background: #ef4444;
+}
+
+.btnIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.inputTooltip {
+  position: absolute;
+  top: 70%;
+  left: 17%;
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+  color: red;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+  z-index: 10;
+}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import styles from './Header.module.scss'
+import styles from './AddNewTask.module.scss'
 
-export default function Header({ addTask, error, setError }) {
+export default function AddNewTask({ addTask }) {
   const [inputValue, setInputValue] = useState('')
   const [inputValidationFailed, setInputValidationFailed] = useState('')
 
@@ -53,12 +53,6 @@ export default function Header({ addTask, error, setError }) {
           Add
         </button>
       </form>
-      {error && (
-        <div className={styles.errorMessage}>
-          {error.message}
-          <button onClick={() => setError(null)}>Закрыть</button>
-        </div>
-      )}
     </section>
   )
 }
