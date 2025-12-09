@@ -8,13 +8,13 @@ export async function fetchTasks(filter = 'all') {
   return await response.json()
 }
 
-export async function updateTasks(id, isDone, title) {
+export async function updateTask(id, todoRequest) {
   const response = await fetch(`https://easydev.club/api/v1/todos/${id}`, {
     method: 'PUT',
     headers: {
       'Content-type': 'application/json',
     },
-    body: JSON.stringify({ isDone, title }),
+    body: JSON.stringify(todoRequest),
   })
 
   if (!response.ok) {
@@ -28,7 +28,7 @@ export async function createTask(title) {
   const response = await fetch(`https://easydev.club/api/v1/todos`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ title: title, isDone: false }),
+    body: JSON.stringify({ title, isDone: false }),
   })
 
   if (!response.ok) {

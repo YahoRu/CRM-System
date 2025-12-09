@@ -1,13 +1,4 @@
-.taskFilters {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 24px;
-  padding: 0.1rem;
-  margin: 0 0 1rem;
-  width: 100%;
-}
-
-.taskFilters button {
+.btn {
   background-color: #f3f4f6;
   color: #9ca3af;
   font-weight: 600;
@@ -18,11 +9,11 @@
   border: none;
 }
 
-.taskFilters button.active {
+.btn.active {
   color: #2563eb;
   text-decoration: underline;
 }
 
-.taskFilters button:focus {
+.btn:focus {
   outline: none;
 }

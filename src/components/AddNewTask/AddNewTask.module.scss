@@ -1,0 +1,30 @@
+.header {
+  margin-bottom: 1rem;
+}
+
+.headerForm {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.inputWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.headerInput {
+  flex: 1;
+  padding: 0.4rem 0;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  background: transparent;
+  font: inherit;
+  outline: none;
+}
+
+.headerInput::placeholder {
+  color: #9ca3af;
+}
