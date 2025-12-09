@@ -1,0 +1,19 @@
+.btn {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  font: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.active {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.btn:focus {
+  outline: none;
+}
